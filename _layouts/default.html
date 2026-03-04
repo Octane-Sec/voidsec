@@ -3,28 +3,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="{{ '/favicon/favicon.png' | relative_url }}" />
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ page.title }} | Voidstack</title>
+  
+  <title>{% if page.title %}{{ page.title }} | Voidstack{% else %}Voidstack{% endif %}</title>
+  
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  
   <style>
-    body { font-family: 'Fira Code', monospace; background-color: #0a0a0a; color: #e0e0e0; }
+    body { 
+      font-family: 'Fira Code', monospace; 
+      background-color: #0a0a0a; 
+      color: #e0e0e0; 
+    }
     .glow { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; }
-    .hover-glow:hover { text-shadow: 0 0 5px #00ff00, 0 0 15px #00ff00; color: #00ff00; transition: all 0.2s ease-in-out; }
+    .hover-glow:hover { 
+      text-shadow: 0 0 5px #00ff00, 0 0 15px #00ff00; 
+      color: #00ff00; 
+      transition: all 0.2s ease-in-out; 
+    }
+    /* Add this to handle vertical spacing for injected content */
+    main { min-height: 80vh; }
   </style>
 </head>
 <body class="overflow-x-hidden">
   <nav class="fixed top-0 left-0 w-full z-50 flex flex-wrap justify-between items-center p-4 border-b border-gray-700 bg-black/80 backdrop-blur">
-    <h1 class="text-green-400 text-xl font-bold glow"><a href="/">Voidstack</a></h1>
+    <h1 class="text-green-400 text-xl font-bold glow">
+      <a href="{{ '/' | relative_url }}">Voidstack</a>
+    </h1>
     <ul class="flex flex-wrap gap-2 text-sm mt-2 md:mt-0">
-      <li><a href="/about/" class="hover-glow">About</a></li>
-      <li><a href="/#blogs" class="hover-glow">Blogs</a></li>
-      <li><a href="/#contact" class="hover-glow">Contact</a></li>
+      <li><a href="{{ '/about/' | relative_url }}" class="hover-glow">About</a></li>
+      <li><a href="{{ '/#blogs' | relative_url }}" class="hover-glow">Blogs</a></li>
+      <li><a href="{{ '/#contact' | relative_url }}" class="hover-glow">Contact</a></li>
     </ul>
   </nav>
 
-  {{ content }}
+  <main>
+    {{ content }}
+  </main>
 
   <footer class="text-center py-6 border-t border-gray-700 text-gray-500 text-sm">
     <p>Made with ❤️ by <a href="https://github.com/v0idstack" class="hover-glow">v0idstack-dev</a></p>

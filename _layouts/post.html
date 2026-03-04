@@ -1,23 +1,76 @@
 ---
 layout: default
 ---
-<div class="max-w-4xl mx-auto px-4 pt-32 pb-16">
-  <a href="/#blogs" class="text-green-400 hover:underline mb-8 inline-block font-mono"><- Back to terminal</a>
-  
-  <article class="prose prose-invert lg:prose-xl">
-    <h1 class="text-4xl md:text-5xl font-bold text-green-400 glow mb-4 font-mono">{{ page.title }}</h1>
-    <p class="text-gray-500 mb-12 font-mono">Date: {{ page.date | date: "%Y-%m-%d" }} | Author: 0ctane</p>
-    
-    <div class="markdown-content text-gray-300 leading-relaxed space-y-6">
-      {{ content }}
+
+<article class="max-w-4xl mx-auto px-4 pt-32 pb-16">
+  <div class="mb-8">
+    <a href="{{ '/' | relative_url }}#blogs" class="text-green-400 hover:glow font-mono text-sm">
+      &lt;-- RETURN TO TERMINAL
+    </a>
+  </div>
+
+  <header class="mb-12 border-b border-gray-800 pb-8">
+    <h1 class="text-4xl md:text-5xl font-bold text-green-400 glow mb-4 font-mono">
+      {{ page.title }}
+    </h1>
+    <div class="flex gap-4 text-gray-500 font-mono text-xs uppercase tracking-widest">
+      <span>Date: {{ page.date | date: "%Y-%m-%d" }}</span>
+      <span>Author: 0ctane</span>
+      <span>Status: Decrypted</span>
     </div>
-  </article>
-</div>
+  </header>
+
+  <div class="void-content text-gray-300 leading-relaxed font-sans">
+    {{ content }}
+  </div>
+</article>
 
 <style>
-  /* This makes your Markdown look good */
-  .markdown-content h2 { color: #00ff00; font-size: 1.5rem; font-weight: bold; margin-top: 2rem; font-family: monospace; }
-  .markdown-content p { margin-bottom: 1.25rem; }
-  .markdown-content code { background: #1a1a1a; color: #00ff00; padding: 0.2rem 0.4rem; border-radius: 4px; }
-  .markdown-content pre { background: #111; border: 1px solid #333; padding: 1rem; overflow-x: auto; }
+  /* Custom Markdown Styling for the 'Void' Aesthetic */
+  .void-content h1, .void-content h2, .void-content h3 {
+    color: #00ff00;
+    font-family: 'Fira Code', monospace;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+  }
+  .void-content h2 { border-left: 3px solid #00ff00; padding-left: 1rem; font-size: 1.5rem; }
+  
+  .void-content p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+  
+  .void-content ul { list-style-type: square; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #00ff00; }
+  .void-content ul li { margin-bottom: 0.5rem; }
+  .void-content ul li span { color: #e0e0e0; } /* Keep text white while bullets are green */
+
+  /* Terminal-style Code Blocks */
+  .void-content pre {
+    background: #050505;
+    border: 1px solid #1a3a1a;
+    padding: 1.5rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 2rem 0;
+    box-shadow: inset 0 0 10px #000;
+  }
+  .void-content code {
+    font-family: 'Fira Code', monospace;
+    color: #00ff00;
+    font-size: 0.9rem;
+  }
+  
+  /* Inline code (like `this`) */
+  :not(pre) > code {
+    background: #1a1a1a;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    border: 1px solid #333;
+  }
+
+  .void-content blockquote {
+    border-left: 4px solid #444;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #888;
+  }
 </style>

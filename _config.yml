@@ -1,5 +1,15 @@
 title: Voidstack
+description: Start from void. Stack your skills. Reach root.
 baseurl: "" 
 url: "https://v0idstack.github.io"
-theme: jekyll-theme-minimal
-markdown: kramdown
+
+# This tells GitHub to use the Minimal theme as a base
+remote_theme: pages-themes/minimal@v0.2.0
+
+# This ensures your custom layouts in _layouts/ are prioritized
+layout: default
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag

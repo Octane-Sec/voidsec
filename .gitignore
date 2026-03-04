@@ -1,0 +1,11 @@
+# Jekyll/Ruby Junk
+_site/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+.bundle/
+Gemfile.lock
+
+# OS Junk
+.DS_Store
+Thumbs.db
