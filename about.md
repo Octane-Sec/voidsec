@@ -42,9 +42,3 @@
             When I first started, I spent more time finding good resources than actually learning. It felt like every path was either paywalled, too surface-level, or just clickbait. I built voidsec so no one else has to waste that time. It’s not perfect — and I’m still learning — but it’s real.
         </p>
     </section>
-
-    <hr class="border-gray-800 mb-10">
-
-    <h2 class="text-xl text-white mb-6 uppercase tracking-widest text-sm font-bold">Current_Capabilities</h2>
-    <div class="space-y-4 font-mono mb-10">
-        <div class="flex flex-col md

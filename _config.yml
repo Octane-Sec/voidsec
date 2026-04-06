@@ -1,15 +1,28 @@
-title: Voidstack
-description: Start from void. Stack your skills. Reach root.
-baseurl: "" 
-url: "https://v0idstack.github.io"
+# Site Settings
+title: Voidsec
+email: octane007@proton.me
+description: >- # this means to ignore newlines until "baseurl"
+  Voidsec.
+baseurl: "/voidsec" # the subpath of your site, e.g. /blog
+url: "https://octane-sec.github.io/" # the base hostname & protocol for your site, e.g. http://localhost:4000
 
-remote_theme: pages-themes/minimal@v0.2.0
+# Theme Settings
+# Replace 'pages-themes/cayman' with any GitHub theme you like
+remote_theme: pages-themes/cayman
 
-layout: default
-
+# Plugins
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
-remote_theme: pages-themes/hacker@v0.2.0
+# Build Settings
+exclude:
+  - Dockerfile
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
