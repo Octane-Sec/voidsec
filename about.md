@@ -42,7 +42,3 @@
             When I first started, I spent more time finding good resources than actually learning. It felt like every path was either paywalled, too surface-level, or just clickbait. I built voidsec so no one else has to waste that time. It’s not perfect — and I’m still learning — but it’s real.
         </p>
     </section>
-    
-    </body>
-
-</html>
